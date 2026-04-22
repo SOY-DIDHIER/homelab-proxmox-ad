@@ -12,7 +12,7 @@ Objetivo: practicar y documentar configuraciones de nivel empresarial.
 | Hardware | Lenovo M90q G2 |
 | CPU | Intel i5-10500T |
 | RAM | 32 GB |
-| Hipervisor | Proxmox VE |
+| Hipervisor | Proxmox VE 9.1 |
 
 ## 🖥️ Máquinas Virtuales
 
@@ -24,19 +24,50 @@ Objetivo: practicar y documentar configuraciones de nivel empresarial.
 
 ---
 
-## 📋 Proyectos Documentados
+## 📋 Active Directory Corporativo
 
-### ✅ Active Directory Corporativo
-- Dominio: `corp.lab.local`
-- Unidades Organizativas: IT · RRHH · Ventas
-- Usuarios y grupos por departamento
-- GPOs aplicadas por OU
+Dominio: `empresa.local`  
+Controlador de dominio: `DC01.empresa.local`
 
-### 🔨 En construcción
-- Configuración de File Server con permisos NTFS
+### Estructura de OUs
+
+![Estructura AD](todas%20OUs.png)
+
+### Usuarios por departamento
+
+| OU | Usuarios |
+|---|---|
+| IT | carlos.garcia · ana.martinez · pedro.sanchez |
+| RRHH | laura.fernandez · miguel.torres · sofia.romero |
+| Ventas | javier.lopez · carmen.diaz · roberto.jimenez |
+| Dirección | antonio.morales |
+
+![Usuarios IT](usuarios%20OU-IT.png)
+![Usuarios RRHH](usuarios%20OU-RRHH.png)
+![Usuarios Ventas](usuarios%20OU-Ventas.png)
+![Usuarios Dirección](usuario%20OU-direccion.png)
+
+---
+
+## ⚙️ GPOs Corporativas Implementadas
+
+| GPO | Función |
+|---|---|
+| GPO-Fondo-Corporativo | Fondo de pantalla corporativo bloqueado |
+| GPO-Bloqueo-USB | Bloqueo de lectura y escritura en USB |
+| GPO-Politica-Contrasenas | Contraseñas mínimo 8 caracteres · complejidad · historial |
+
+![GPOs](todas%20las%20GPOs.png)
+
+---
+
+## 🔨 En construcción
+
+- File Server con permisos NTFS
 - Hardening básico de Windows Server
 - Monitorización con herramientas open source
 - Backup automatizado
+- Unir cliente Windows 10 al dominio
 
 ---
 
